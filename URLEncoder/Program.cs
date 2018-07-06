@@ -31,7 +31,6 @@ namespace URLEncoder
         static void Main(string[] args)
         {
             Console.WriteLine("URL Encoder");
-
             do
             {
                 Console.Write("Project name: ");
@@ -52,11 +51,11 @@ namespace URLEncoder
             {
                 input = Console.ReadLine();
                 valid = true;
-                foreach (char c in input.ToCharArray())
+                foreach (char x in input.ToCharArray())
                 {
-                    if (controlChars.Contains(c))
+                    if (controlChars.Contains(x))
                     {
-                        Console.WriteLine("Invalid character was inputed, try again: ");
+                        Console.WriteLine("Invalid character was entered, try again: ");
                         valid = false;
                     }
                 }
@@ -66,7 +65,6 @@ namespace URLEncoder
 
         static string Replace(string name)
         {
-            name = name.Replace(" ", "%20");
             foreach (var change in changes)
             {
                 name = name.Replace(change.Key, change.Value);
