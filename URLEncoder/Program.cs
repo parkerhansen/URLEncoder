@@ -5,6 +5,7 @@ namespace URLEncoder
 {
     class Program
     {
+        
         static List<int> controlChars = new List<int>(new int[]
             {
                 0x00, 0x01, 0x02, 0x03, 0x04,
