@@ -35,10 +35,10 @@ namespace URLEncoder
             do
             {
                 Console.Write("Project name: ");
-                string projectName = UserInput();
+                string projectName = Replace(UserInput());
                 Console.Write("Activity name: ");
-                string activityName = UserInput();
-                Console.WriteLine(CreatedURL(projectName, activityName));
+                string activityName = Replace(UserInput());
+                Console.WriteLine("https://companyserver.com/content/{0}/files/{1}/{1}Report.pdf", projectName, activityName);
                 Console.Write("Would you like to make another url? (y/n): ");
             }
             while (Console.ReadLine().ToLower().Equals("y"));
@@ -62,6 +62,16 @@ namespace URLEncoder
                 }
             }
             return input;
+        }
+
+        static string Replace(string name)
+        {
+            name = name.Replace(" ", "%20");
+            foreach (var change in changes)
+            {
+                name = name.Replace(change.Key, change.Value);
+            }
+            return name;
         }
     }
 }
