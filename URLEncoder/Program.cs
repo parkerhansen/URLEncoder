@@ -16,6 +16,7 @@ namespace URLEncoder
                 0x1E, 0x1F, 0x7F
             }
         );
+        
         static Dictionary<string, string> changes = new Dictionary<string, string>
         {
             {" ", "%20"},   {"<", "%3C"},   {">", "%3E"},
